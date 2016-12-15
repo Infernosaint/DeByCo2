@@ -1,0 +1,5 @@
+C:\Users\Infernosaint\Source\Repos\ContractStuff\ContractStuff\bin\Debug\ContractStuff.exe.config
+C:\Users\Infernosaint\Source\Repos\ContractStuff\ContractStuff\bin\Debug\ContractStuff.exe
+C:\Users\Infernosaint\Source\Repos\ContractStuff\ContractStuff\bin\Debug\ContractStuff.pdb
+C:\Users\Infernosaint\Source\Repos\ContractStuff\ContractStuff\obj\Debug\ContractStuff.exe
+C:\Users\Infernosaint\Source\Repos\ContractStuff\ContractStuff\obj\Debug\ContractStuff.pdb
