@@ -22,7 +22,7 @@ namespace ContractStuff
 
         public void AddAcount(Account account)
         {
-           Contract.Requires<AccountExeption>(accounts.Contains(account) == false);
+           Contract.Requires(accounts.Contains(account) == false, "That account already belongs to this user");
            accounts.Add(account);
            
         }
@@ -38,11 +38,6 @@ namespace ContractStuff
             return accounts;
         }
 
-        public class AccountExeption : ArgumentException
-        {
-            public AccountExeption() : base("The account is already set up")
-            {
-            }
-        }
+        
     }
 }

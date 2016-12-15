@@ -34,10 +34,10 @@ namespace ContractStuff
             movements = new List<Movement>();
         }
 
-        public Movement Withdraw(double amount)
+        public Movement withdraw(double amount)
         {
-            Contract.Requires(amount > 0);
-            Contract.Requires(amount <= balance);
+            Contract.Requires(amount > 0, "Use a positive number above 0");
+            Contract.Requires(amount <= balance, "Balance is too low");
             Movement movement = new Movement(-amount);
             movements.Add(movement);
             return movement;
@@ -52,11 +52,11 @@ namespace ContractStuff
             return accountNumber;
         }
 
-        [ContractInvariantMethod]
-        private void ObjectInvariant()
-        {
-            Contract.Invariant(this.balance >= 0, "The Desired amount exceded the Balance. The withdrawal is canceled");
-        }
+        //[ContractInvariantMethod]
+        //private void ObjectInvariant()
+        //{
+        //    Contract.Invariant(this.balance >= 0, "The Desired amount exceded the Balance. The withdrawal is canceled");
+        //}
 
         internal double getInitialBalance()
         {
@@ -68,11 +68,11 @@ namespace ContractStuff
             return movements;
         }
 
-        public class moneyException : ArgumentOutOfRangeException
-        {
-            public moneyException() : base("The Desired amount exceded the Balance. The withdrawal is canceled")
-            {
-            }
-        }
+        //public class moneyException : ArgumentOutOfRangeException
+        //{
+        //    public moneyException() : base("The Desired amount exceded the Balance. The withdrawal is canceled")
+        //    {
+        //    }
+        //}
     }
 }

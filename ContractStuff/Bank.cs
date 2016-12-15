@@ -26,7 +26,7 @@ namespace ContractStuff
         public void move(Double amount, Account source, Account target)
         {
             Contract.Requires(amount > 0);
-            Movement movement = source.Withdraw(amount);
+            Movement movement = source.withdraw(amount);
             target.Deposit(movement);
         }
 
