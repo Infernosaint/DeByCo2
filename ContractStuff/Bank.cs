@@ -46,7 +46,7 @@ namespace ContractStuff
 
         public String makeStatement(Customer customer, Account account)
         {
-            String statement = "";
+            String statement = "BANK STATEMENT FROM " + name + "\n";
             if (customer.getAccounts().Contains(account))
             {
                 

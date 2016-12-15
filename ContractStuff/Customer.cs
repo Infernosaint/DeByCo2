@@ -11,7 +11,7 @@ namespace ContractStuff
     {
         private string name;
         private int ID;
-        private List<Account> accounts;
+        public List<Account> accounts;
 
         public Customer(string name, int ID)
         {

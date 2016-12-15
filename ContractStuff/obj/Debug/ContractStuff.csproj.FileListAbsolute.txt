@@ -8,3 +8,5 @@ C:\Users\Infernosaint\Desktop\DeByCo2\ContractStuff\obj\Debug\ContractStuff.exe
 C:\Users\Infernosaint\Desktop\DeByCo2\ContractStuff\obj\Debug\ContractStuff.pdb
 C:\Users\Infernosaint\Desktop\DeByCo2\ContractStuff\bin\Debug\ContractStuff.exe
 C:\Users\Infernosaint\Desktop\DeByCo2\ContractStuff\bin\Debug\ContractStuff.pdb
+C:\Users\Infernosaint\Desktop\DeByCo2\ContractStuff\obj\Debug\ContractStuff.csprojResolveAssemblyReference.cache
+C:\Users\Infernosaint\Desktop\DeByCo2\ContractStuff\obj\Debug\ContractStuff.rewritten

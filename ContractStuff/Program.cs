@@ -20,6 +20,7 @@ namespace ContractStuff
             {
                 Console.WriteLine("T for transfer, S for statement");
                 ConsoleKey key = Console.ReadKey().Key;
+                Console.WriteLine();
                 if (key == ConsoleKey.T)
                 {
                     Console.WriteLine();
@@ -28,6 +29,7 @@ namespace ContractStuff
                     double amount;
                     if (double.TryParse(input, out amount))
                     {
+
                         bank1.move(amount, account1, account2);
                     }
                     else
