@@ -37,7 +37,7 @@ namespace ContractStuff
         public Movement withdraw(double amount)
         {
             Contract.Requires(amount > 0, "Use a positive number above 0");
-            Contract.Requires(amount <= balance, "Balance is too low");
+            Contract.Requires<moneyException>(amount <= balance, "Balance is too low");
             Movement movement = new Movement(-amount);
             movements.Add(movement);
             return movement;
@@ -68,11 +68,11 @@ namespace ContractStuff
             return movements;
         }
 
-        //public class moneyException : ArgumentOutOfRangeException
-        //{
-        //    public moneyException() : base("The Desired amount exceded the Balance. The withdrawal is canceled")
-        //    {
-        //    }
-        //}
+        public class moneyException : ArgumentOutOfRangeException
+        { 
+            public moneyException() : base("The Desired amount exceded the Balance. The withdrawal is canceled")
+            {
+            }
+        }
     }
 }
