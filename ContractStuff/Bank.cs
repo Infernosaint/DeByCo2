@@ -60,6 +60,7 @@ namespace ContractStuff
                     newBalance += movement.amount;
                     statement += movement.amount + " : " + newBalance.ToString() + "\n";
                 }
+                statement += "Final Balance: " + account.getBalance() + "\n";
             }
             else
             {

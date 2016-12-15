@@ -43,6 +43,11 @@ namespace ContractStuff
                     Console.WriteLine(statement1);
 
                 }
+                else if (key == ConsoleKey.C)
+                {
+                    account1.balance++;
+
+                }
                 else if (key == ConsoleKey.E)
                 {
                     running = false;

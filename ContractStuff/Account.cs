@@ -13,23 +13,14 @@ namespace ContractStuff
         private List<Movement> movements;
         private double initialBalance;
 
-        public double balance
-        {
-            get
-            {
-                double sudoBalance = 0;
-                sudoBalance += initialBalance;
-                foreach (Movement movement in movements)
-                {
-                    sudoBalance += movement.amount;
-                }
-                return sudoBalance;
-            }
-        }
+        public double balance;
+
+        
 
         public Account(int accountNumber, double initialBalance)
         {
             this.accountNumber = accountNumber;
+            this.balance = initialBalance;
             this.initialBalance = initialBalance;
             movements = new List<Movement>();
         }
@@ -40,23 +31,41 @@ namespace ContractStuff
             Contract.Requires<moneyException>(amount <= balance, "Balance is too low");
             Movement movement = new Movement(-amount);
             movements.Add(movement);
+            balance += (-amount);
             return movement;
         }
 
         public void Deposit(Movement movement)
         {
             movements.Add(movement);
+            balance += (movement.amount);
         }
         public int getAccountNumber()
         {
             return accountNumber;
         }
+        public double getBalance()
+        {
+            return balance;
+        }
+        private double getCalculatedBalance()
+        {
+            double calcBalance = 0;
+            calcBalance += initialBalance;
+            foreach (Movement movement in movements)
+            {
+                calcBalance += movement.amount;
+            }
+            return calcBalance;
+        }
 
-        //[ContractInvariantMethod]
-        //private void ObjectInvariant()
-        //{
-        //    Contract.Invariant(this.balance >= 0, "The Desired amount exceded the Balance. The withdrawal is canceled");
-        //}
+        [ContractInvariantMethod]
+        private void ObjectInvariant()
+        {
+           Contract.Invariant(this.balance == this.getCalculatedBalance(), "The Desired amount exceded the Balance. The withdrawal is canceled");
+        }
+
+        
 
         internal double getInitialBalance()
         {
